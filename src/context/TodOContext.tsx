@@ -30,7 +30,6 @@ const ToDoProvider: FC<ToDoProviderProps> = ({ children }) => {
     
   useEffect(() => {
     const data = GET_DATA_FROM_LOCAL_STORAGE();
-    console.log(data);
     setTodoList(data);
   }, []);
 
