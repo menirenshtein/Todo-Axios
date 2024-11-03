@@ -1,10 +1,15 @@
-import { FC } from "react";
 
-const TodoList:FC = () => { 
+import ToDo from "../ToDo/ToDo";
+import { useGlobalUser } from "../../context/TodOContext";
 
+
+const TodoList = () => { 
+  const {todoList} = useGlobalUser()
   return (
     <div className="todo-list">
-      aaaa
+      {todoList.map((t)=>{
+        return <ToDo todo={t}/>
+      })}
     </div>
   );
 };
