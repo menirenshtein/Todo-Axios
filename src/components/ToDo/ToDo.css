@@ -4,6 +4,8 @@
     gap: 20px;
     align-items: center;
     text-align: center;
+    cursor: pointer;
+    user-select: none;
 }
 
 button{

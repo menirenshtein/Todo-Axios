@@ -26,6 +26,7 @@ const toDoContext = createContext<ContextProps>({
   
 const ToDoProvider: FC<ToDoProviderProps> = ({ children }) => {
   const [todoList, setTodoList] = useState<todoInterface[] | []>([])
+  const [status, setstatus] = useState<toDoStatusEnum>(toDoStatusEnum.newMission)
     
   useEffect(() => {
     const data = GET_DATA_FROM_LOCAL_STORAGE();
@@ -52,7 +53,10 @@ const ToDoProvider: FC<ToDoProviderProps> = ({ children }) => {
   const updateTask = (todo: string)=>{
     let tempList: todoInterface[] = todoList
     const foundTodo = tempList.find((t)=>t.task === todo)
-    foundTodo!.status = toDoStatusEnum.missionDone
+    foundTodo!.status === toDoStatusEnum.missionDone ?
+    foundTodo!.status = toDoStatusEnum.newMission
+    : foundTodo!.status = toDoStatusEnum.missionDone 
+    setstatus(foundTodo!.status)
     localStorage.setItem('toDoList', JSON.stringify(tempList))
   }
 
