@@ -1,0 +1,11 @@
+.AddTodo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+button{
+    max-height: fit-content;
+    padding: 5px;
+}

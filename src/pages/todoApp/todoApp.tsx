@@ -1,16 +1,15 @@
 import AddTodo from "../../components/addTodo/addTodo"
 import TodoList from "../../components/TodoList/TodoList"
-import { useGlobalUser } from "../../context/TodOContext"
+import './todoApp.css'
 
-const {todoList} = useGlobalUser() 
-const todoApp = () => {
+const TodoApp = () => {
   return (
-    <div>
+    <div className="TodoApp" >
       <AddTodo/>
-      <TodoList todoList={todoList}/>
+      <TodoList />
 
     </div>
   )
 }
 
-export default todoApp
+export default TodoApp
